@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="CodeIgniter Application Test Suite" tests="21" assertions="17" failures="3" errors="1" time="0.728299">
+    <testsuite name="Admin_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Admin_test.php" fullPackage="Admin" tests="10" assertions="8" failures="0" errors="1" time="0.380939">
+      <testcase name="test_index" class="Admin_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Admin_test.php" line="15" assertions="1" time="0.058049"/>
+      <testcase name="test_shu" class="Admin_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Admin_test.php" line="21" assertions="1" time="0.047881"/>
+      <testcase name="test_shu_tanpaadmin" class="Admin_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Admin_test.php" line="26" assertions="0" time="0.025472">
+        <error type="PHPUnit_Framework_Exception">Admin_test::test_shu_tanpaadmin
+PHPUnit_Framework_Exception: Argument #2 of PHPUnit_Framework_Assert::assertContains() must be a array, iterator or string
+
+C:\xampp\htdocs\kopma\application\tests\controllers\Admin_test.php:30
+</error>
+      </testcase>
+      <testcase name="test_simpanan" class="Admin_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Admin_test.php" line="31" assertions="1" time="0.072666"/>
+      <testcase name="test_agenda" class="Admin_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Admin_test.php" line="36" assertions="1" time="0.050696"/>
+      <testcase name="test_register_anggota" class="Admin_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Admin_test.php" line="41" assertions="1" time="0.027954"/>
+      <testcase name="test_register_agenda" class="Admin_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Admin_test.php" line="46" assertions="1" time="0.031485"/>
+      <testcase name="test_register_shu" class="Admin_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Admin_test.php" line="51" assertions="1" time="0.028716"/>
+      <testcase name="test_register_simpanan" class="Admin_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Admin_test.php" line="56" assertions="1" time="0.033057"/>
+      <testcase name="test_submit_agenda" class="Admin_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Admin_test.php" line="62" assertions="0" time="0.004963"/>
+    </testsuite>
+    <testsuite name="Login_admin_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Login_admin_test.php" fullPackage="Login.admin" tests="4" assertions="3" failures="1" errors="0" time="0.105687">
+      <testcase name="test_index" class="Login_admin_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Login_admin_test.php" line="15" assertions="1" time="0.025696"/>
+      <testcase name="test_index_tanpauser" class="Login_admin_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Login_admin_test.php" line="21" assertions="0" time="0.025417">
+        <failure type="PHPUnit_Framework_AssertionFailedError">Login_admin_test::test_index_tanpauser
+redirect() is not called.
+
+C:\xampp\htdocs\kopma\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
+C:\xampp\htdocs\kopma\application\tests\controllers\Login_admin_test.php:26
+</failure>
+      </testcase>
+      <testcase name="test_aksi_login" class="Login_admin_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Login_admin_test.php" line="28" assertions="1" time="0.029770"/>
+      <testcase name="test_logout" class="Login_admin_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Login_admin_test.php" line="36" assertions="1" time="0.024804"/>
+    </testsuite>
+    <testsuite name="Login_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Login_test.php" fullPackage="Login" tests="6" assertions="5" failures="2" errors="0" time="0.171565">
+      <testcase name="test_index_userada" class="Login_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Login_test.php" line="16" assertions="1" time="0.023050"/>
+      <testcase name="test_index_tanpauser" class="Login_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Login_test.php" line="22" assertions="0" time="0.034224">
+        <failure type="PHPUnit_Framework_AssertionFailedError">Login_test::test_index_tanpauser
+redirect() is not called.
+
+C:\xampp\htdocs\kopma\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
+C:\xampp\htdocs\kopma\application\tests\controllers\Login_test.php:26
+</failure>
+      </testcase>
+      <testcase name="test_aksi_login" class="Login_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Login_test.php" line="28" assertions="1" time="0.031997">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">Login_test::test_aksi_login
+Failed asserting that '&lt;!DOCTYPE html&gt;
+&lt;html &gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Login&lt;/title&gt;
+  &lt;link rel="icon" href=http://localhost:8080/kopma/assets/images/kopma.ico &gt;
+  
+  
+      &lt;link rel="stylesheet" href="http://localhost:8080/kopma/assets/css/style.css"&gt;
+
+  
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div class="wrapper"&gt;
+	&lt;div class="container"&gt;
+		&lt;h1&gt;Welcome&lt;/h1&gt;
+		
+		&lt;form action="http://localhost:8080/kopma/login/aksi_login" method="post" role="form"&gt;
+			&lt;input type="text" placeholder="Username" name="username"&gt;
+			&lt;input type="password" placeholder="Password" name="pass"&gt;
+			&lt;button type="submit" id="login-button"&gt;Login&lt;/button&gt;
+			&lt;div class="form-group"&gt;
+				&lt;label&gt;Akun tidak ditemukan, mohon hubungi Administrator&lt;/label&gt;
+			&lt;/div&gt;
+		&lt;/form&gt;
+	&lt;/div&gt;
+	
+	&lt;ul class="bg-bubbles"&gt;
+		&lt;li&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+  &lt;script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'&gt;&lt;/script&gt;
+
+    &lt;script  src="http://localhost:8080/kopma/js/index.js"&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+' contains "&lt;h4&gt;Histori Tagihan&lt;/h4&gt;".
+
+C:\xampp\htdocs\kopma\application\tests\controllers\Login_test.php:34
+</failure>
+      </testcase>
+      <testcase name="test_aksi_login_tanpauser" class="Login_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Login_test.php" line="36" assertions="1" time="0.029225"/>
+      <testcase name="test_aksi_login_tanpastatus" class="Login_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Login_test.php" line="42" assertions="1" time="0.028145"/>
+      <testcase name="test_logout" class="Login_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\Login_test.php" line="51" assertions="1" time="0.024924"/>
+    </testsuite>
+    <testsuite name="User_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\User_test.php" fullPackage="User" tests="1" assertions="1" failures="0" errors="0" time="0.070108">
+      <testcase name="test_index" class="User_test" file="C:\xampp\htdocs\kopma\application\tests\controllers\User_test.php" line="20" assertions="1" time="0.070108"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
