@@ -111,7 +111,7 @@ class Admin extends CI_Controller{
                 'tanggal' => $this->encryption->encrypt($tanggal),
                 'deskripsi' => $this->encryption->encrypt($deskripsi),
         );
-        $res = $this->db->insert('agenda', $data_insert);
+        $res = $this->model_admin->addAgenda($data_insert);
         $data['err_message'] = "REGISTER SUKSES";
         $this->load->view('admin/admin_formagenda', $data);
 	}
@@ -137,7 +137,7 @@ class Admin extends CI_Controller{
                 'nak' => $this->encryption->encrypt($nak),
                 'sisa' => $this->encryption->encrypt($shu),
         );
-        $res = $this->db->insert('shu', $data_insert);
+        $res = $this->model_admin->addSHU($data_insert);
         $data['err_message'] = "REGISTER SUKSES";
         $this->load->view('admin/admin_formshu', $data);
 	}
@@ -154,43 +154,43 @@ class Admin extends CI_Controller{
 
 	function submit_simpanan(){
 		$NAK = $_POST['NAK'];
-        $nama = $_POST['nama'];
-        $pemicu = $_POST['nama'] . $_POST['jumlah'];
-        $deadline = $_POST['deadline'];
-        $jumlah = $_POST['jumlah'];
-        $jenis = $_POST['jenis'];
-        $status = $_POST['status'];
-        $data_insert = array(
-                'NAK' => $this->encryption->encrypt($NAK),
-                'nama' => $this->encryption->encrypt($nama),
-                'name' => sha1($nama),
-                'pemicu' => sha1($pemicu),
-                'deadline' => $this->encryption->encrypt($deadline),
-                'jumlah' => $this->encryption->encrypt($jumlah),
-                'jenis' => $this->encryption->encrypt($jenis),
-                'status' => $this->encryption->encrypt($status),
-        );
-        $res = $this->db->insert('tagihan', $data_insert);
-        $data['err_message'] = "REGISTER SUKSES";
+		$nama = $_POST['nama'];
+		$pemicu = $_POST['nama'] . $_POST['jumlah'];
+		$deadline = $_POST['deadline'];
+		$jumlah = $_POST['jumlah'];
+		$jenis = $_POST['jenis'];
+		$status = $_POST['status'];
+		$data_insert = array(
+			'NAK' => $this->encryption->encrypt($NAK),
+			'nama' => $this->encryption->encrypt($nama),
+			'name' => sha1($nama),
+			'pemicu' => sha1($pemicu),
+			'deadline' => $this->encryption->encrypt($deadline),
+			'jumlah' => $this->encryption->encrypt($jumlah),
+			'jenis' => $this->encryption->encrypt($jenis),
+			'status' => $this->encryption->encrypt($status),
+		);
+		$res = $this->model_admin->addSimpanan($data_insert);
+		$data['err_message'] = "REGISTER SUKSES";
 
-        $email = $_POST['email'];
-     	$config['protocol'] = "smtp";
-	  	$config['smtp_host'] = "ssl://smtp.gmail.com";
-	  	$config['smtp_port'] = "465";
-	  	$config['charset'] = "utf-8";
-	  	$config['smtp_user'] = "bennybtc03@gmail.com";
-	  	$config['smtp_pass'] = "bennybtc19";
-	  	$config['mailtype'] = "html";
-	  	$config['newline'] = "\r\n";
-	  	$config['validation'] = TRUE;
-	  	$this->email->initialize($config);
-	  	$this->email->to($email);
-	  	$this->email->from('Koperasi Mahasiswa ITS');
-	 	$this->email->subject('Tagihan masuk !');
-	  	$this->email->message('Hai, ' . $nama . ' ! anda mendapatkan tagihan sebesar : ' . $jumlah . " ! " . "Deadline : " . $deadline . "Jenis : " . $jenis);
-	  	$this->email->send();
+		$email = $_POST['email'];
+		$config['protocol'] = "smtp";
+			$config['smtp_host'] = "ssl://smtp.gmail.com";
+			$config['smtp_port'] = "465";
+			$config['charset'] = "utf-8";
+			$config['smtp_user'] = "fILL EMAIL";
+			$config['smtp_pass'] = "FILL PASSWORD";
+			$config['mailtype'] = "html";
+			$config['newline'] = "\r\n";
+			$config['validation'] = TRUE;
+			$this->email->initialize($config);
+			$this->email->to($email);
+			$this->email->from('Koperasi Mahasiswa ITS');
+			$this->email->subject('Tagihan masuk !');
+			$this->email->message('Hai, ' . $nama . ' ! anda mendapatkan tagihan sebesar : ' . $jumlah . " ! " . "Deadline : " . $deadline . "Jenis : " . $jenis);
+			$this->email->send();
 
-        $this->load->view('admin/admin_formsimpanan', $data);
+		$this->load->view('admin/admin_formsimpanan', $data);
 	}
 
 	public function registerData(){
@@ -226,7 +226,7 @@ class Admin extends CI_Controller{
             	$data['err_message'] = "REGISTER SUKSES";
                 $this->load->view('admin/admin_formanggota', $data);
             }
-            $res = $this->db->insert('anggota', $data_insert);
+            $res = $this->model_admin->addAnggota($data_insert);
         }
     }
 
@@ -405,8 +405,8 @@ class Admin extends CI_Controller{
 		  	$config['smtp_host'] = "ssl://smtp.gmail.com";
 		  	$config['smtp_port'] = "465";
 		  	$config['charset'] = "utf-8";
-		  	$config['smtp_user'] = "bennybtc03@gmail.com";
-		  	$config['smtp_pass'] = "bennybtc19";
+		  	$config['smtp_user'] = "FILL EMAIL";
+		  	$config['smtp_pass'] = "FILL PASSWORD";
 		  	$config['mailtype'] = "html";
 		  	$config['newline'] = "\r\n";
 		  	$config['validation'] = TRUE;
