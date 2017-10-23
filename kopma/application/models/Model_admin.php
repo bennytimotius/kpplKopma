@@ -1,5 +1,17 @@
 <?php
 	Class Model_admin extends CI_Model{
+		function addAnggota($data_insert){
+                  $this->db->insert('anggota', $data_insert);
+                 }
+                function addAgenda($data_insert){
+                  $this->db->insert('agenda', $data_insert);
+                 }
+                function addSimpanan($data_insert){
+                  $this->db->insert('tagihan', $data_insert);
+                 }
+                function addSHU($data_insert){
+                  $this->db->insert('shu', $data_insert);
+                }
 		function getAnggota() {
  			$query = $this->db->get('anggota');
  			return $query->result_array();
