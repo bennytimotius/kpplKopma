@@ -8,7 +8,7 @@ public function index() {
 			redirect(base_url("user"));
 		}elseif($this->session->userdata('status') == "admin"){
 			redirect(base_url("admin"));
-		}else{ 
+		}elseif($this->session->userdata('status') == ""){ 
 			$this->load->view('Home');
 		}
 	}
