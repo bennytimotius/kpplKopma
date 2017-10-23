@@ -30,7 +30,7 @@ class Home_test extends TestCase
         public function test_index_nologin(){
             $_SESSION['status'] = '';
             $output = $this->request('GET', 'home');
-            $this->assertRedirect('home/index');
+           $this->assertContains('<title>KOPMA ITS</title>', $output);
         }
         public function test_index()
 	{
