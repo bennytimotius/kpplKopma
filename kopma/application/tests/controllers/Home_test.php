@@ -28,7 +28,7 @@ class Home_test extends TestCase
             
         }
         public function test_index_nologin(){
-            //$_SESSION['status'] = '';
+            $_SESSION['status'] = '';
             $output = $this->request('GET', 'home');
             $this->assertRedirect('home/index');
         }
